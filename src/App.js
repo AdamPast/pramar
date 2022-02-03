@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import About from './components/layout/content/About';
+import Contact from './components/layout/content/Contact';
+import Header from './components/layout/content/Header';
+import Services from './components/layout/content/Services';
+import Footer from './components/layout/Footer';
+import Navbar from './components/layout/Navbar';
 
-function App() {
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+  GoogleReCaptcha
+} from "react-google-recaptcha-v3";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GoogleReCaptchaProvider reCaptchaKey="6Lc0K1ceAAAAAHDIQhP8uK2nmPL5ZmDZdGStMqkd">
+    <Navbar/>
+    <div className="main--container" id="main">
+			<main className="main">
+        <Header />
+      </main>
+		</div>
+    <About />
+    <Services />
+    <Contact />
+    <Footer />
+    </GoogleReCaptchaProvider>
   );
 }
 
