@@ -4,15 +4,13 @@ import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha'
 
 const Contact = () => {
-	
-	const [captcha, setCaptcha] = useState(false);
 
 
+	const [captcha, setCaptcha] = useState()
  	const form = useRef();
 
 	const sendEmail = (e) => {
 		e.preventDefault();
-	
 		emailjs.sendForm('pramar_eu', 'Pramar_sendMail', form.current, 'user_4TSaMqSIvfzKDIRSChQYp')
 		  .then((result) => {
 			  console.log(result.text);
@@ -20,8 +18,6 @@ const Contact = () => {
 			  console.log(error.text);
 		  });
 	  };
-
-	const recaptchaRef = React.createRef();
 
     return (
         <div className="section--container">
@@ -32,6 +28,7 @@ const Contact = () => {
 				<p>Nr tel.: <strong>123 456 789</strong></p>
 				<p>NIP: <strong>x</strong></p>
 				<p>REGON: <strong>x</strong></p>
+
 				<div className="map--container">
 					<Maps />
 				</div>
@@ -41,46 +38,40 @@ const Contact = () => {
 				<form ref={form} onSubmit={sendEmail}>
 					<div className="form--double">
 						<div className="form--doubleitem">
-    						<label for="fname">Imię</label>
-    						<input type="text" id="fname" name="firstname" placeholder="Jan" />
+    						<label htmlFor="fname">Imię</label>
+    						<input type="text" id="fname" name="firstname" placeholder="Jan" required/>
     					</div>
-
     					<div className="form--doubleitem">
-    						<label for="lname">Nazwisko</label>
-    						<input type="text" id="lname" name="lastname" placeholder="Kowalski" />
+    						<label htmlFor="lname">Nazwisko</label>
+    						<input type="text" id="lname" name="lastname" placeholder="Kowalski" required/>
     					</div>
     				</div>
-
     				<div className="form--double">
 						<div className="form--doubleitem">
-    						<label for="phone">Nr tel.</label>
-    						<input type="text" id="phone" name="phone" placeholder="123456789" />
+    						<label htmlFor="phone">Nr tel.</label>
+    						<input type="text" id="phone" name="phone" placeholder="123456789" required/>
     					</div>
-
     					<div className="form--doubleitem">
-    						<label for="email">Adres e-mail</label>
-    						<input type="email" id="email" name="email" placeholder="kowalski@mail.pl" />
+    						<label htmlFor="email">Adres e-mail</label>
+    						<input type="email" id="email" name="email" placeholder="kowalski@mail.pl" required/>
     					</div>
     				</div>
-
     				<div className="form--single">
-    					<label for="subject">Wiadomość</label>
+    					<label htmlFor="subject">Wiadomość</label>
     					<textarea id="subject" name="message" placeholder="Twoja wiadomość..."></textarea>
-    				</div>
-    				
-					
+    				</div>			
     				<div className="form--submit">
-						{captcha ? <input type="submit" value="Wyślij" disabled/> : <input type="submit" value="Wyślij" disabled/>}
 						<ReCAPTCHA
-							sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
-							onChange={()=>{setCaptcha(true)}}
-					/>
-    				</div>
-    				
+								sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
+								onChange={() => setCaptcha(true)}
+						/>
+						<input type="submit" value="Wyślij" disabled={!captcha}/>
+    				</div>			
   				</form>
 			</section>
 		</div>
     )
 }
+
 
 export default Contact
