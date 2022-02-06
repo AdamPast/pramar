@@ -2,8 +2,19 @@ import React, { useRef, useState } from 'react'
 import Maps from './Maps'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha'
-
+import axios from 'axios'
 const Contact = () => {
+
+	
+	const smsapi = () =>{
+		await axios.post()
+		.then(res => {
+			console.log(res);
+		})
+		.catch(err => {
+			console.log(err);
+		})
+	}
 
 
 	const [captcha, setCaptcha] = useState()
