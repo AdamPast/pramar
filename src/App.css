@@ -1,5 +1,6 @@
 html {
 	scroll-padding-top: 120px;
+	scroll-behavior: smooth;
 }
 
 * {
@@ -48,7 +49,7 @@ body {
 	margin: 0 10px; 
 }
 
-.item a {
+.item button {
 	color: #00244f;
 	text-decoration: none;
 	padding: 0 30px; 
@@ -57,10 +58,13 @@ body {
 	height: 100%; 
 	align-items: center; 
 	text-align: center;
-	transition: color .5s
+	transition: color .5s;
+	background-color: #fff;
+	border: none;
+	font-size: 1em;
 }
 
-.item a:hover { color: #ff0; }
+.item button:hover { color: #f58b4f;}
 
 .logo--nav {
 	height: 70px; 
@@ -124,7 +128,7 @@ body {
 
 .main--info {
 	padding: 10px 0;
-	font-size: .8em;
+	font-size: .9em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: rgba(255,255,255,.8);
@@ -289,8 +293,9 @@ label {
 	transition: color .5s
 }
 
-.footer a:hover {
+.footer i:hover {
 	color: #f58b2a;
+	cursor: pointer;
 }
 
 .visuallyhidden {position: absolute !important;clip: rect(1px 1px 1px 1px); /* IE6, IE7 */clip: rect(1px, 1px, 1px, 1px); padding:0 !important;border:0 !important; height: 1px !important; width: 1px !important; overflow: hidden;}
@@ -308,13 +313,13 @@ label {
 	.main--container {min-height: 100vh}
 	.main--description {font-size: 1.2em;}
 	.main--items {width: 100%; flex-direction: column; margin: 0; margin-bottom: 50px; align-items: center;}
-	.main--item {padding: 20px; font-size: .75em}
+	.main--item {padding: 20px; font-size: 1em}
 	#localization {order: -1;}
 
 	.section {width: 100vw; margin: 30px 0; padding: 0 30px;}
 	.section h2 {font-size: 1.4em; padding-bottom: 20px; text-align: center;}
-	.section p {font-size: .75em;}
-	.section ul {font-size: .75em;}
+	.section p {font-size: 1em;}
+	.section ul {font-size: 1em;}
 	.section--content {flex-direction: column;}
 	.section--container {padding: 0}
 	.content--image {text-align: center; padding-top: 10px}
