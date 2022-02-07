@@ -5,20 +5,30 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
 const Contact = () => {
 
-	
-	const smsapi = () =>{
-		await axios.post()
-		.then(res => {
-			console.log(res);
-		})
-		.catch(err => {
-			console.log(err);
-		})
-	}
-
-
+	const [message, setMessage] = useState('')
 	const [captcha, setCaptcha] = useState()
- 	const form = useRef();
+	const form = useRef();
+	 
+
+	 const smsapi = async(mess) =>{
+		 console.log('====================================');
+		 console.log(mess);
+		 console.log('====================================');
+		    setMessage(mess);
+	 	await axios.post(`https://cors.adamblue.workers.dev/?https://api.smsapi.pl/sms.do?from=Test&to=48737169899&message=${message}&format=json`, {}, {
+			 headers:{
+				 'Authorization': `Bearer ${process.env.REACT_APP_SMSAPI}`
+			 }
+		 })
+	 	.then(res => {
+	     	console.log(res);
+	 	})
+	 	.catch(err => {
+	 		console.log(err);
+	 	})
+	 }
+
+	
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -30,6 +40,7 @@ const Contact = () => {
 		  });
 	  };
 
+	  //setMessage("Wiadomosc testowa");
     return (
         <div className="section--container">
 			<section className="section" id="contact">
@@ -45,7 +56,7 @@ const Contact = () => {
 				</div>
 
 				<h3>Formularz kontaktowy</h3>
-
+				<button onClick={() => smsapi("wiadomosc testowa")}>TEST</button>
 				<form ref={form} onSubmit={sendEmail}>
 					<div className="form--double">
 						<div className="form--doubleitem">
