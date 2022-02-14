@@ -2,6 +2,7 @@ import './App.css';
 import About from './components/layout/content/About';
 import Contact from './components/layout/content/Contact';
 import Header from './components/layout/content/Header';
+import Phone from './components/layout/content/Phone';
 import Services from './components/layout/content/Services';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
@@ -15,6 +16,7 @@ const App = () => {
         <Header />
       </main>
 		</div>
+    <Phone />
     <About />
     <Services />
     <Contact />

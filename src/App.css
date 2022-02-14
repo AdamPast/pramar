@@ -233,7 +233,7 @@ body {
 	margin-top: 10px;
 }
 
-input[type=text], input[type=email], textarea {
+input[type=text], input[type=email],input[type=tel], textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -296,6 +296,33 @@ label {
 .footer i:hover {
 	color: #f58b2a;
 	cursor: pointer;
+}
+.phone--form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+.phone--form input[type=tel]{
+	width: 600px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#phone--urgent{
+	text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.google--img img{
+	border-radius: 50%;
+	background-color: white;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .visuallyhidden {position: absolute !important;clip: rect(1px 1px 1px 1px); /* IE6, IE7 */clip: rect(1px, 1px, 1px, 1px); padding:0 !important;border:0 !important; height: 1px !important; width: 1px !important; overflow: hidden;}

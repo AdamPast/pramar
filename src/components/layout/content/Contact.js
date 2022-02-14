@@ -5,28 +5,11 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import axios from 'axios'
 const Contact = () => {
 
-	const [message, setMessage] = useState('')
 	const [captcha, setCaptcha] = useState()
 	const form = useRef();
 	 
 
-	 const smsapi = async(mess) =>{
-		 console.log('====================================');
-		 console.log(mess);
-		 console.log('====================================');
-		    setMessage(mess);
-	 	await axios.post(`https://cors.adamblue.workers.dev/?https://api.smsapi.pl/sms.do?from=Test&to=48737169899&message=${message}&format=json`, {}, {
-			 headers:{
-				 'Authorization': `Bearer ${process.env.REACT_APP_SMSAPI}`
-			 }
-		 })
-	 	.then(res => {
-	     	console.log(res);
-	 	})
-	 	.catch(err => {
-	 		console.log(err);
-	 	})
-	 }
+	 
 
 	
 
@@ -46,17 +29,16 @@ const Contact = () => {
 			<section className="section" id="contact">
 				<h2>Kontakt</h2>
 
-				<p>Adres: <strong>ul. Gwiezdna 4, 00-000 Szemud</strong></p>
-				<p>Nr tel.: <strong>123 456 789</strong></p>
-				<p>NIP: <strong>x</strong></p>
-				<p>REGON: <strong>x</strong></p>
+				<p>Adres: <strong>ul. Długa 00-000 Szemud</strong></p>
+				<p>Nr tel.: <strong>501 820 881</strong></p>
+				<p>NIP: <strong>5882339009</strong></p>
+				<p>REGON: <strong>520751583</strong></p>
 
 				<div className="map--container">
 					<Maps />
 				</div>
 
 				<h3>Formularz kontaktowy</h3>
-				<button onClick={() => smsapi("wiadomosc testowa")}>TEST</button>
 				<form ref={form} onSubmit={sendEmail}>
 					<div className="form--double">
 						<div className="form--doubleitem">
