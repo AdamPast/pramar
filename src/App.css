@@ -49,7 +49,7 @@ body {
 	margin: 0 10px; 
 }
 
-.item button {
+.item a {
 	color: #00244f;
 	text-decoration: none;
 	padding: 0 30px; 
@@ -62,9 +62,10 @@ body {
 	background-color: #fff;
 	border: none;
 	font-size: 1em;
+	cursor: pointer;
 }
 
-.item button:hover { color: #f58b4f;}
+.item a:hover { color: #f58b4f;}
 
 .logo--nav {
 	height: 70px; 

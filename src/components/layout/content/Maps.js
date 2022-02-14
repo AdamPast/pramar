@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react'
 
-const AnyReactComponent = ({text, img}) => <div className="google--img"><img height="75px" width="75px"src={img}/></div>
+const AnyReactComponent = ({text, img}) => <div className="google--img"><img height="75px" width="75px" src={img} alt="PRAMAR"/></div>
 
 class Maps extends Component {
     static defaultProps = {

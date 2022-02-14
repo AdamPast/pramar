@@ -17,13 +17,13 @@ const About = () => {
 					</div>
 
 					<div className="content--image right">
-						<img src="http://placehold.it/1920x1080" alt="zdjecie"/>
+						<img src="photo1.jpg" alt="zdjecie"/>
 					</div>
 				</div>
 
 				<div className="section--content">
 					<div className="content--image left">
-						<img src="http://placehold.it/400x300" alt="zdjecia" />
+						<img src="photo2.jpg" alt="zdjecia" />
 					</div>
 
 					<div className="content--text">

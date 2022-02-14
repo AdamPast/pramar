@@ -2,17 +2,12 @@ import React, { useRef, useState } from 'react'
 import Maps from './Maps'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha'
-import axios from 'axios'
+
 const Contact = () => {
 
 	const [captcha, setCaptcha] = useState()
 	const form = useRef();
 	 
-
-	 
-
-	
-
 	const sendEmail = (e) => {
 		e.preventDefault();
 		emailjs.sendForm('pramar_eu', 'Pramar_sendMail', form.current, 'user_4TSaMqSIvfzKDIRSChQYp')
@@ -22,8 +17,7 @@ const Contact = () => {
 			  console.log(error.text);
 		  });
 	  };
-
-	  //setMessage("Wiadomosc testowa");
+	  
     return (
         <div className="section--container">
 			<section className="section" id="contact">
