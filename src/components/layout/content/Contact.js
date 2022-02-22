@@ -5,36 +5,36 @@ import ReCAPTCHA from 'react-google-recaptcha'
 
 const Contact = () => {
 
-
 	const [captcha, setCaptcha] = useState()
- 	const form = useRef();
-
+	const form = useRef();
+	 
 	const sendEmail = (e) => {
 		e.preventDefault();
 		emailjs.sendForm('pramar_eu', 'Pramar_sendMail', form.current, 'user_4TSaMqSIvfzKDIRSChQYp')
 		  .then((result) => {
 			  console.log(result.text);
+			  alert("Wiadomość została wysłana!")
 		  }, (error) => {
 			  console.log(error.text);
+			  alert("Wysąpił problem, spróbuj później.")
 		  });
 	  };
-
+	  
     return (
         <div className="section--container">
 			<section className="section" id="contact">
 				<h2>Kontakt</h2>
 
-				<p>Adres: <strong>ul. Gwiezdna 4, 00-000 Szemud</strong></p>
-				<p>Nr tel.: <strong>123 456 789</strong></p>
-				<p>NIP: <strong>x</strong></p>
-				<p>REGON: <strong>x</strong></p>
+				<p>Adres: <strong>ul. Długa 00-000 Szemud</strong></p>
+				<p>Nr tel.: <strong>501 820 881</strong></p>
+				<p>NIP: <strong>5882339009</strong></p>
+				<p>REGON: <strong>520751583</strong></p>
 
 				<div className="map--container">
 					<Maps />
 				</div>
 
 				<h3>Formularz kontaktowy</h3>
-
 				<form ref={form} onSubmit={sendEmail}>
 					<div className="form--double">
 						<div className="form--doubleitem">
@@ -65,7 +65,7 @@ const Contact = () => {
 								sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
 								onChange={() => setCaptcha(true)}
 						/>
-						<input type="submit" value="Wyślij" disabled={!captcha}/>
+						<input type="submit" value="Wyślij" disabled={!captcha} style={!captcha ? {backgroundColor: "grey"} : {}} />
     				</div>			
   				</form>
 			</section>

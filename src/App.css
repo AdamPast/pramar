@@ -1,5 +1,7 @@
 html {
 	scroll-padding-top: 120px;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 * {
@@ -57,10 +59,14 @@ body {
 	height: 100%; 
 	align-items: center; 
 	text-align: center;
-	transition: color .5s
+	transition: color .5s;
+	background-color: #fff;
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
 }
 
-.item a:hover { color: #ff0; }
+.item a:hover { color: #f58b4f;}
 
 .logo--nav {
 	height: 70px; 
@@ -93,18 +99,20 @@ body {
 }
 
 .main {
-	width: 900px; 
+	max-width: 1100px; 
 	color: #fff;
 	text-align: center;
-	margin: 150px;
+	margin: 150px auto;
 }
 
 .main--description {
 	padding: 30px 0;
-	font-size: 2.2em;
+	font-size: 2.0em;
 	font-weight: 300;
 	line-height: 150%;
 	text-shadow: 0 0 10px #000;
+	overflow: hidden;
+	
 }
 
 .highlight {
@@ -113,7 +121,7 @@ body {
 
 .main--items {
 	margin-top: 60px;
-	width: 900px;
+	width: 1100px;
 	display: flex;
 	justify-content: space-evenly;
 }
@@ -124,7 +132,7 @@ body {
 
 .main--info {
 	padding: 10px 0;
-	font-size: .8em;
+	font-size: .9em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: rgba(255,255,255,.8);
@@ -134,7 +142,38 @@ body {
 	font-size: 1.3em;
 	letter-spacing: 2px;
 }
-
+.services{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.service{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 260px;
+	margin: 30px 30px;
+}
+.service p{
+	margin-top: 20px;
+	text-align: center;
+}
+.service i{
+	font-size: 600%;
+	color: #fff
+}
+.service-ball{
+	width: 250px;
+	height: 250px;
+	background-color: #00244f;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
 .section--container {
 	width: 100vw; 
 	max-width: 100%; 
@@ -189,6 +228,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .right {padding-left: 20px;}
 .left {padding-right: 20px;}
 
@@ -229,7 +269,7 @@ body {
 	margin-top: 10px;
 }
 
-input[type=text], input[type=email], textarea {
+input[type=text], input[type=email],input[type=tel], textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -289,8 +329,36 @@ label {
 	transition: color .5s
 }
 
-.footer a:hover {
+.footer i:hover {
 	color: #f58b2a;
+	cursor: pointer;
+}
+.phone--form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+.phone--form input[type=tel]{
+	width: 600px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#phone--urgent{
+	text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.google--img img{
+	border-radius: 50%;
+	background-color: white;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .visuallyhidden {position: absolute !important;clip: rect(1px 1px 1px 1px); /* IE6, IE7 */clip: rect(1px, 1px, 1px, 1px); padding:0 !important;border:0 !important; height: 1px !important; width: 1px !important; overflow: hidden;}
@@ -298,6 +366,9 @@ label {
 @media (max-width: 1200px) {
 	.section--container {padding-left: 50px; padding-right: 50px}
 	.form--doubleitem {width: 49%}
+	.main{max-width: 100%;}
+	.main--description{padding: 20px;}
+
 }
 
 @media (max-width: 1000px) {
@@ -308,13 +379,13 @@ label {
 	.main--container {min-height: 100vh}
 	.main--description {font-size: 1.2em;}
 	.main--items {width: 100%; flex-direction: column; margin: 0; margin-bottom: 50px; align-items: center;}
-	.main--item {padding: 20px; font-size: .75em}
+	.main--item {padding: 20px; font-size: 1em}
 	#localization {order: -1;}
 
 	.section {width: 100vw; margin: 30px 0; padding: 0 30px;}
 	.section h2 {font-size: 1.4em; padding-bottom: 20px; text-align: center;}
-	.section p {font-size: .75em;}
-	.section ul {font-size: .75em;}
+	.section p {font-size: 1em;}
+	.section ul {font-size: 1em;}
 	.section--content {flex-direction: column;}
 	.section--container {padding: 0}
 	.content--image {text-align: center; padding-top: 10px}
@@ -340,6 +411,11 @@ label {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+	.phone--form input[type=tel]{
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
 	}
 }
 
