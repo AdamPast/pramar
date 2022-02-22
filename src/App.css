@@ -1,6 +1,7 @@
 html {
 	scroll-padding-top: 120px;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 * {
@@ -98,18 +99,20 @@ body {
 }
 
 .main {
-	width: 900px; 
+	max-width: 1100px; 
 	color: #fff;
 	text-align: center;
-	margin: 150px;
+	margin: 150px auto;
 }
 
 .main--description {
 	padding: 30px 0;
-	font-size: 2.2em;
+	font-size: 2.0em;
 	font-weight: 300;
 	line-height: 150%;
 	text-shadow: 0 0 10px #000;
+	overflow: hidden;
+	
 }
 
 .highlight {
@@ -118,7 +121,7 @@ body {
 
 .main--items {
 	margin-top: 60px;
-	width: 900px;
+	width: 1100px;
 	display: flex;
 	justify-content: space-evenly;
 }
@@ -139,7 +142,38 @@ body {
 	font-size: 1.3em;
 	letter-spacing: 2px;
 }
-
+.services{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.service{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 260px;
+	margin: 30px 30px;
+}
+.service p{
+	margin-top: 20px;
+	text-align: center;
+}
+.service i{
+	font-size: 600%;
+	color: #fff
+}
+.service-ball{
+	width: 250px;
+	height: 250px;
+	background-color: #00244f;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
 .section--container {
 	width: 100vw; 
 	max-width: 100%; 
@@ -194,6 +228,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .right {padding-left: 20px;}
 .left {padding-right: 20px;}
 
@@ -331,6 +366,9 @@ input[type=number] {
 @media (max-width: 1200px) {
 	.section--container {padding-left: 50px; padding-right: 50px}
 	.form--doubleitem {width: 49%}
+	.main{max-width: 100%;}
+	.main--description{padding: 20px;}
+
 }
 
 @media (max-width: 1000px) {
@@ -373,6 +411,11 @@ input[type=number] {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+	.phone--form input[type=tel]{
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
 	}
 }
 

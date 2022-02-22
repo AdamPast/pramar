@@ -7,12 +7,8 @@ const About = () => {
 				<h2>O nas</h2>
 				<div className="section--content">
 					<div className="content--text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. <span className="highlight">Duis aute irure dolor in reprehenderit in voluptate velit</span> esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<p><strong className="highlight">Pramar</strong> jest świeżynką na rynku, ale doświadczenie w naprawie samochodów ciężarowych mamy niemal <strong className="highlight">10</strong> letnie! 
+							Oferujemy usługi w zakresie serwisu samochodów ciężarowych, dostawczych, autobusów, koparek, traktorów, maszyn rolniczych, a nawet samochodów specjalnych.	
 						</p>
 					</div>
 
@@ -27,12 +23,8 @@ const About = () => {
 					</div>
 
 					<div className="content--text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor <span className="highlight">incididunt ut labore et dolore magna aliqua</span>. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<p>Posiadamy również <strong className="highlight">profesjonalny</strong> sprzęt do wulkanizacji opon w samochodach ciężarowych, dzięki czemu szybko radzimy sobie z wymianą opon lub, jeśli jest to możliwe, naprawą. 
+							Sezonowo dokonujemy również przeglądu oraz serwisu <strong className="highlight">klimatyzacji</strong>.
 						</p>
 					</div>	
 				</div>

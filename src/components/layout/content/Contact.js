@@ -13,8 +13,10 @@ const Contact = () => {
 		emailjs.sendForm('pramar_eu', 'Pramar_sendMail', form.current, 'user_4TSaMqSIvfzKDIRSChQYp')
 		  .then((result) => {
 			  console.log(result.text);
+			  alert("Wiadomość została wysłana!")
 		  }, (error) => {
 			  console.log(error.text);
+			  alert("Wysąpił problem, spróbuj później.")
 		  });
 	  };
 	  
@@ -63,7 +65,7 @@ const Contact = () => {
 								sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
 								onChange={() => setCaptcha(true)}
 						/>
-						<input type="submit" value="Wyślij" disabled={!captcha}/>
+						<input type="submit" value="Wyślij" disabled={!captcha} style={!captcha ? {backgroundColor: "grey"} : {}} />
     				</div>			
   				</form>
 			</section>
