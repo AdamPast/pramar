@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import ReCAPTCHA from 'react-google-recaptcha'
+import Reaptcha  from 'reaptcha'
 
 const Phone = () => {
 
@@ -37,9 +37,10 @@ const Phone = () => {
                 <form onSubmit={sendPhone} className="phone--form">
                     <label htmlFor="number">Twój numer telefonu</label>
                     <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" required onChange={(e)=> setNumber(e.target.value)} />
-                    <ReCAPTCHA
-								sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
-								onChange={() => setCaptcha(true)}
+
+                    <Reaptcha  sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
+                                onVerify={() => setCaptcha(true)}
+                                onLoad={()=> console.log("załadowane")}
 						/>
                     <input type="submit" value="Poproś o kontakt" disabled={!captcha} style={!captcha ? {backgroundColor: "grey"} : {}}/>
                 </form>

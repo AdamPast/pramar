@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Maps from './Maps'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha'
+import Reaptcha  from 'reaptcha'
 
 const Contact = () => {
 
@@ -25,7 +26,7 @@ const Contact = () => {
 			<section className="section" id="contact">
 				<h2>Kontakt</h2>
 
-				<p>Adres: <strong>ul. Długa 00-000 Szemud</strong></p>
+				<p>Adres: <strong>ul.Rodówko 1 Grabowiec</strong></p>
 				<p>Nr tel.: <strong>501 820 881</strong></p>
 				<p>NIP: <strong>5882339009</strong></p>
 				<p>REGON: <strong>520751583</strong></p>
@@ -61,9 +62,9 @@ const Contact = () => {
     					<textarea id="subject" name="message" placeholder="Twoja wiadomość..."></textarea>
     				</div>			
     				<div className="form--submit">
-						<ReCAPTCHA
+						<Reaptcha 
 								sitekey="6LcAOlceAAAAAEX3p9AlDZi41q1B8nY4pm0JM41a"
-								onChange={() => setCaptcha(true)}
+								onVerify={() => setCaptcha(true)}
 						/>
 						<input type="submit" value="Wyślij" disabled={!captcha} style={!captcha ? {backgroundColor: "grey"} : {}} />
     				</div>			
