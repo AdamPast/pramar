@@ -26,7 +26,7 @@ const Contact = () => {
 			<section className="section" id="contact">
 				<h2>Kontakt</h2>
 
-				<p>Adres: <strong>ul.Rodówko 1 Grabowiec</strong></p>
+				<p>Adres: <strong>ul.Rodówko 1, Grabowiec</strong></p>
 				<p>Nr tel.: <strong>501 820 881</strong></p>
 				<p>NIP: <strong>5882339009</strong></p>
 				<p>REGON: <strong>520751583</strong></p>
